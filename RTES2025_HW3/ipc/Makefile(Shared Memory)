@@ -1,0 +1,13 @@
+CXX = g++
+CXXFLAGS = -Wall -std=c++11
+
+all: shm-writer shm-reader
+
+shm-writer: shm-writer.cpp
+	$(CXX) $(CXXFLAGS) shm-writer.cpp -o shm-writer -lrt
+
+shm-reader: shm-reader.cpp
+	$(CXX) $(CXXFLAGS) shm-reader.cpp -o shm-reader -lrt
+
+clean:
+	rm -f shm-writer shm-reader

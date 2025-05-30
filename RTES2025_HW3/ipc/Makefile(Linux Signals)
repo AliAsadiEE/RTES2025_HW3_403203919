@@ -1,0 +1,13 @@
+CXX = g++
+CXXFLAGS = -Wall -std=c++11
+
+all: signal-sender signal-receiver
+
+signal-sender: signal-sender.cpp
+	$(CXX) $(CXXFLAGS) signal-sender.cpp -o signal-sender
+
+signal-receiver: signal-receiver.cpp
+	$(CXX) $(CXXFLAGS) signal-receiver.cpp -o signal-receiver
+
+clean:
+	rm -f signal-sender signal-receiver received-signals.log
