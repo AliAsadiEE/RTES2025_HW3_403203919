@@ -1,0 +1,14 @@
+[Unit]
+Description=Simple Web Server Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/root/myprojects/simple-web-server.sh
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
